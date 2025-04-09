@@ -1,4 +1,4 @@
-It's a bridge between SAS language and llama.cpp, allowing SAS programs to call llama.cpp(https://github.com/ggml-org/llama.cpp) to run large models locally.
+This's a bridge between SAS language and llama.cpp, allowing SAS programs to call llama.cpp(https://github.com/ggml-org/llama.cpp) to run large models locally.
 
 Install:
 1. Download the appropriate llama.cpp binary package from https://github.com/ggml-org/llama.cpp/releases according to your OS and hardware configuration.
@@ -23,10 +23,15 @@ Install:
 Suppose model gemma-1.1-7b-it.Q4_K_M.gguf is in c:\temp, then SAS code to run this model:
 
 //library to store the model result
+
 libname tmplib "c:\temp";
+
 proc ollama out=tmplib.result;
+
 model "c:\temp\gemma-1.1-7b-it.Q4_K_M.gguf";
+
 params "-no-cnv -ngl 99 -p ""Once upon a time""";
+
 run;
 
 The output:
