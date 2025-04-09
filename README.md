@@ -26,14 +26,12 @@ Suppose model gemma-1.1-7b-it.Q4_K_M.gguf is in c:\temp, then SAS code to run th
 libname tmplib "c:\temp";
 proc ollama out=tmplib.result;
 model "c:\temp\gemma-1.1-7b-it.Q4_K_M.gguf";
-params "-no-cnv -ngl 128 -p ""Once upon a time""";
+params "-no-cnv -ngl 99 -p ""Once upon a time""";
 run;
 
-or set timeout and debug:
+The output:
+![image](https://github.com/user-attachments/assets/2ecba401-6529-44c8-b240-de82f94c4ef6)
 
-proc ollama out=tmplib.result timeout=80000 debug;
-model "c:\temp\gemma-1.1-7b-it.Q4_K_M.gguf";
-params "-no-cnv -ngl 128 -p ""Once upon a time""";
-run;
+
 
 
